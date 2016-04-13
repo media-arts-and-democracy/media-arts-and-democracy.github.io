@@ -1,0 +1,212 @@
+@charset "UTF-8";
+/* CSS Document */
+
+*{margin:0px;padding:0px;}
+
+body{
+	background-color:#111;
+	background-image:url('images/stripeyTrans.png');
+	font-family: 'dosis', sans-serif;
+	}
+
+/* removed header specifications */
+
+nav{ 
+	background-color:#181818;	
+	font-family:'Abel',sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	height:110px;
+	width:1366px;
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index: 10; /* keep on top of other content */
+}
+
+nav ul#main{ /* move nav links to clear the logo */
+	position:relative;
+	left:3.5in;
+}
+
+li {
+	list-style:none;
+	float:left;
+}
+
+ul#main li a, ul#main li span, ul#project-menu{ 
+	position:absolute; /* each block placed */
+}
+
+ul#main li a{ /* covers all a's found in #main, which inludes #project-menu */
+	color:gray;
+	background-color:#9E9E9E;
+	font-family: 'Quicksand', sans-serif;
+	text-decoration:none;
+	height:11px; /* changed from padding */
+	width:11px; /* changed from padding */
+	display:block; /* to change background color */
+	cursor:crosshair;
+}
+
+ul#main li a:hover{
+	background-color:#9E9E9E;
+}
+
+
+ul#main li span { /* #label-project, #label-about, #label-people, #label-donate, #label-contact */
+	opacity:0; /* begin with labels turned off */
+}
+
+#menu-project{top:50px;left:-50px;}
+#label-project{color:#FFF;top:50px; /* 13px over from menu */left:-37px;}
+#menu-about{top:25px;left:100px;}
+#label-about{color:#EF5223;top:25px;left:113px;}
+#menu-people{top:65px;left:200px;}
+#label-people{color:#843981;top:65px;left:213px;}
+#menu-donate{top:20px;left:300px;}
+#label-donate{color:#1B8992;top:20px;left:313px;}
+#menu-contact{top:40px;left:400px;}
+#label-contact{color:#BF2328;top:40px;left:413px;}
+
+ul#main li a#menu-project:hover, ul#main li a#menu-project.current{background-color:white;}
+ul#main li a#menu-about:hover, ul#main li a#menu-about.current{background-color:#EF5223;}
+ul#main li a#menu-people:hover, ul#main li a#menu-people.current{background-color:#843981;}
+ul#main li a#menu-donate:hover, ul#main li a#menu-donate.current{background-color:#1B8992;}
+ul#main li a#menu-contact:hover, ul#main li a#menu-contact.current{background-color:#BF2328;}
+
+ul#project-menu{ /* submenu for individual projects */
+	width:300px;
+	left:-53px;
+	top:65px;
+	display:none;
+}
+
+ul#project-menu li a{ /* submenu squares */
+	background-color:#181818;	
+	border:1px solid #D4D4D4;
+	margin:3px;	
+	position:relative; 
+	float:left; /* fix to be able to change color of entire square */
+}
+
+ul#project-menu li a:hover{
+	background-color:#D4D4D4;
+}
+
+/* need to reset the position of the project label for projects that have been opened...IN THE JS */
+
+ul#project-menu span{/* #label-sos, #label-open, #label-fem, #label-sexvio, #label-central, #label-grmtn, #label-filmphoto */
+	color:#D4D4D4;
+	width:500px; /* so the whole line of text will fit without a line break */
+	position:relative; /* relative works to keep label in proximity to link but it's too far over */
+	top:18px;
+	opacity:0;
+}
+/* add 18px between labels...11px box plus 3px padding should be 17 but whatever */
+
+#label-sos{left:3px;}
+#label-open{left:21px;}
+#label-fem{left:40px;}
+#label-sexvio{left:59px;}
+#label-central{left:78px;}
+#label-grmtn{left:97px;}
+#label-filmphoto{left:116px;}
+
+#project{
+	width:1366px; /* This was set to 100%, which is why there were no visible stripes in the background */
+	position:relative;
+	/* height:5100px; this was causing an unintential overlapping */
+}
+
+#project div{ /* #sos, #open, #fem, #sexvio, #central, #grmtn, #filmphoto */
+	padding-top:36px;
+	height:720px;
+	position:relative;
+	z-index:2;
+}
+
+#project div:first-child{ /* first project only, so that it clears the nav space */
+	padding-top:146px;
+}
+
+#about, #people, #donate, #contact { 
+	width:1366px; /* updated these values */
+	height:720px;
+}
+#about{background-color:#B33E1A;}
+#people{background-color:#632B61;}
+#donate{background-color:#14676E;}
+#contact{background-color:#8F1A1E;}
+
+#top-box a{ /* link to go to the top of the page */
+	background-color:#000;
+	background-image: url('images/up-blue.png');
+	background-position:center center; /* top, left */
+	background-repeat: no-repeat;
+	text-decoration:none; /* replaced text with an image of an arrow */
+	width:39px;
+	height:55px;
+	padding:11px;
+	position:fixed;
+	right:20px;
+	bottom:20px;
+	z-index:10;
+}
+
+#top-box a:hover {
+	background-color:#222;
+	background-image: url('images/up-orange.png');
+}
+#ccmad{
+	position:fixed; /* figure out position coordinates in the js */
+	z-index:15; /* on top of everything */
+}
+
+#welcome-screen{
+	background-color:rgba(0,0,0,0.93);
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0px;
+	z-index:15;
+}
+
+#welcome{
+	width:850px;
+	height:400px;
+	margin:100px auto 0px auto;
+	position:relative;
+}
+
+#welcome img{
+	position:absolute;
+	left:340px;
+	top:100px;	
+}
+
+#welcome-message{
+	width:320px;
+	margin-left:30px;
+	position:fixed;
+	top:100px;
+}
+
+#welcome-message h1{
+	color:white;
+	font-family: 'Ropa Sans', sans-serif;
+	font-size:36px;
+	padding-top:190px;
+	padding-left:100px;
+	position:relative;
+	left:-100px;
+}
+
+#welcome-message p{
+	color:gray;
+	margin-bottom:20px;
+}
+
+.visible, .current{ /* accessed via the js */
+	display:visible;
+}
